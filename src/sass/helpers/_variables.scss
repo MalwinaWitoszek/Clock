@@ -1,0 +1,13 @@
+@import "helpers/mixins";
+
+//Typography
+$fontsize: 18px;
+
+
+//dimensions
+$clockdimension: 180px;
+$clockpadding : 10px;
+$diameter : $clockdimension - 2*$clockpadding; 
+$radius: ($diameter - 25)/2;
+$a : sqrt(3)/2;
+

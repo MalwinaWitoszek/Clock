@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clock {
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border: 30px solid #79b19c;
+  background-color: #79b19c;
+  border-radius: 50%;
+  position: relative;
+  -webkit-box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.1), 0 0 0 2px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.1), 0 0 0 2px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clockFace {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  -webkit-transform: translateX(-2px);
+          transform: translateX(-2px);
+  /* account for the width of the clock hands */
+}
+
+.handClock {
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 1.5px);
+  bottom: 50%;
+  background: #111111;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transition: all .08s ease-in-out;
+  transition: all .08s ease-in-out;
+}
+
+#hour {
+  width: 4px;
+  height: 25%;
+}
+
+#minute {
+  width: 4px;
+  height: 38%;
+}
+
+#second {
+  width: 2px;
+  height: 40%;
+}
+
+.numbers {
+  font-size: 18px;
+  top: 90px;
+  left: 90px;
+  background-color: #336756;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border: 1px solid black;
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+}
+
+.numbers .numbers-number {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+}
+
+.numbers .numbers-number:nth-of-type(1) {
+  top: -72px;
+  left: -4.5px;
+}
+
+.numbers .numbers-number:nth-of-type(2) {
+  top: -61.45671px;
+  left: 29.25px;
+}
+
+.numbers .numbers-number:nth-of-type(3) {
+  top: -38.25px;
+  left: 49.45671px;
+}
+
+.numbers .numbers-number:nth-of-type(4) {
+  top: -6px;
+  left: 58.5px;
+}
+
+.numbers .numbers-number:nth-of-type(5) {
+  top: 24.75px;
+  left: 49.45671px;
+}
+
+.numbers .numbers-number:nth-of-type(6) {
+  top: 49.45671px;
+  left: 27.75px;
+}
+
+.numbers .numbers-number:nth-of-type(7) {
+  top: 58.5px;
+  left: -6px;
+}
+
+.numbers .numbers-number:nth-of-type(8) {
+  top: 49.45671px;
+  left: -38.25px;
+}
+
+.numbers .numbers-number:nth-of-type(9) {
+  top: 24.75px;
+  left: -62.95671px;
+}
+
+.numbers .numbers-number:nth-of-type(10) {
+  top: -9px;
+  left: -72px;
+}
+
+.numbers .numbers-number:nth-of-type(11) {
+  top: -38.25px;
+  left: -62.95671px;
+}
+
+.numbers .numbers-number:nth-of-type(12) {
+  top: -62.95671px;
+  left: -38.25px;
+}
+
+html {
+  background-color: #dadada;
+  font-family: 'Alex Brush', cursive;
+  font-weight: 700;
+  text-align: center;
+  font-size: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  min-height: 100vh;
+  /* centering */
+  display: grid;
+}
+
+.container {
+  margin: auto;
+  width: 20vw;
+  height: 20vw;
+  display: grid;
+  position: relative;
+  background-color: #478f78;
+  z-index: -2;
+  border-radius: 50%;
+}
+
+.rotatingbg {
+  background: url("../img/background.jpg") center no-repeat;
+  background-color: #478f78;
+  background-size: cover;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.centering, .clock, .clockFace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

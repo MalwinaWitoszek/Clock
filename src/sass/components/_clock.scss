@@ -1,0 +1,119 @@
+
+.clock {
+    @extend .centering;
+    width: $clockdimension;
+    height: $clockdimension;
+    margin: auto;
+    border:30px solid #79b19c;
+    background-color: #79b19c;
+    border-radius:50%;
+    position: relative;
+    box-shadow:
+    0 0 0 7px rgba(0,0,0,0.1),
+    0 0 0 2px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .clockFace {
+    @extend .centering;
+    position: relative;
+    width: $diameter;
+    height: $diameter;
+    transform: translateX(-2px); /* account for the width of the clock hands */
+  }
+
+  .handClock {
+    border-radius: 50%;
+    position: absolute;
+    left:calc(50% - 1.5px);
+    bottom: 50%;
+    background:rgb(17, 17, 17);
+    transform-origin: bottom;
+    transition: all .08s ease-in-out;
+    // transition-timing-function: cubic-bezier(0.67, 3.04, .77, 1.98);
+  }
+  #hour{
+    width:4px;
+    height:25%;
+  }
+  #minute{
+    width:4px;
+    height:38%;
+  }
+  #second{
+    width:2px;
+    height:40%;
+  }
+  .numbers{
+   font-size: $fontsize;
+   // position: absolute;
+   top: $clockdimension / 2;
+   left: $clockdimension / 2; 
+   background-color: #336756;
+   top:0;
+   left:0;
+   width: 5px;
+   height: 5px;
+   border: 1px solid black;
+   border-radius: 50%;
+   z-index: 1;
+   position: relative;
+   
+   .numbers-number{
+     position: absolute;
+     // background-color: blue;
+     width: $fontsize;  
+     height: $fontsize;  
+     
+     &:nth-of-type(1){
+       top: - $radius - $fontsize / 4;
+       left: - $fontsize / 4;
+     }
+     &:nth-of-type(2){
+       top: - $radius * $a - $fontsize /6;
+       left: $radius / 2 - $fontsize / 4;
+     }
+     &:nth-of-type(3){
+       top: -$radius / 2 - $fontsize /4;
+       left: $radius * $a - $fontsize / 2;
+     }  
+     &:nth-of-type(4){
+       top: -$fontsize / 3;
+       left: $radius - $fontsize / 2;
+     }
+     &:nth-of-type(5){
+       top: $radius / 2 - $fontsize / 2;
+       left: $radius * $a - $fontsize /2;
+     }
+     &:nth-of-type(6){
+       top: $radius * $a - $fontsize / 2;
+       left: $radius / 2 - $fontsize /3;
+     }
+     &:nth-of-type(7){
+       top: $radius - $fontsize / 2;
+       left: - $fontsize / 3;
+     }
+     &:nth-of-type(8){
+       top: $radius * $a - $fontsize / 2;
+       left: -$radius / 2 - $fontsize /4;
+     }   
+     &:nth-of-type(9){
+       top: $radius / 2 - $fontsize / 2;
+       left: -$radius * $a - $fontsize / 4;
+     }  
+      &:nth-of-type(10){
+       top: -$fontsize / 2;
+       left: -$radius - $fontsize / 4;
+     }   
+     &:nth-of-type(11){
+       top: -$radius / 2 - $fontsize / 4;
+       left: -$radius * $a - $fontsize / 4;
+     } 
+      &:nth-of-type(12){
+       top: -$radius * $a - $fontsize / 4;
+       left: -$radius / 2 - $fontsize / 4;
+     }
+   }
+  }
+ 
