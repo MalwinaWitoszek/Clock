@@ -27,9 +27,10 @@ body
     display: grid;
     position: relative;
     background-color: rgb(71, 143, 120);
-    z-index: -2; 
+    z-index: -2;
     border-radius: 50%;
-   
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out 0s;
  }
 .rotatingbg{
     background: url("../img/background.jpg") center no-repeat;
@@ -41,7 +42,7 @@ body
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1; 
+    z-index: -1;
     border-radius: 50%;
     transition: transform .3s;
     filter: blur(1px) ;
